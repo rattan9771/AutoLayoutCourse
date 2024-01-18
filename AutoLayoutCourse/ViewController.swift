@@ -28,13 +28,18 @@ class PriorityTestViewController: UIViewController {
         v1.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(v1)
         
-        NSLayoutConstraint(item: v1, attribute: .top, relatedBy: .equal, toItem: bt1, attribute: .bottom, multiplier: 1.0, constant: 24).isActive = true
+        v1.topAnchor.constraint(equalTo: bt1.bottomAnchor, constant: 24).isActive = true
+        v1.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: -8).isActive = true
+        v1.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 18).isActive = true
+        v1.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: -18).isActive = true
         
-        NSLayoutConstraint(item: v1, attribute: .bottom, relatedBy: .equal, toItem: self.view.safeAreaLayoutGuide, attribute: .bottom, multiplier: 1.0, constant: -8).isActive = true
+       // NSLayoutConstraint(item: v1, attribute: .top, relatedBy: .equal, toItem: bt1, attribute: .bottom, multiplier: 1.0, constant: 24).isActive = true
+        
+     //   NSLayoutConstraint(item: v1, attribute: .bottom, relatedBy: .equal, toItem: self.view.safeAreaLayoutGuide, attribute: .bottom, multiplier: 1.0, constant: -8).isActive = true
 
-        NSLayoutConstraint(item: v1, attribute: .leading, relatedBy: .equal, toItem: self.view.safeAreaLayoutGuide, attribute: .leading, multiplier: 1.0, constant: 18).isActive = true
+      //  NSLayoutConstraint(item: v1, attribute: .leading, relatedBy: .equal, toItem: self.view.safeAreaLayoutGuide, attribute: .leading, multiplier: 1.0, constant: 18).isActive = true
 
-       NSLayoutConstraint(item: v1, attribute: .trailing, relatedBy: .equal, toItem: self.view.safeAreaLayoutGuide, attribute: .trailing, multiplier: 1.0, constant: -18).isActive = true
+     //  NSLayoutConstraint(item: v1, attribute: .trailing, relatedBy: .equal, toItem: self.view.safeAreaLayoutGuide, attribute: .trailing, multiplier: 1.0, constant: -18).isActive = true
         
         let bt2 = addBtn2(v1 : v1)
         
@@ -53,11 +58,16 @@ class PriorityTestViewController: UIViewController {
         v1.addSubview(bt1)
         bt1.translatesAutoresizingMaskIntoConstraints = false
         
-        NSLayoutConstraint(item: bt1, attribute: .top, relatedBy: .equal, toItem: bt2, attribute: .bottom, multiplier: 1.0, constant: 24).isActive = true
         
-        NSLayoutConstraint(item: bt1, attribute: .centerX, relatedBy: .equal, toItem: v1, attribute: .centerX, multiplier: 1.0, constant: 0).isActive = true
+        bt1.topAnchor.constraint(equalTo: bt2.bottomAnchor, constant: 24).isActive = true
+        bt1.centerXAnchor.constraint(equalTo: v1.centerXAnchor, constant: 0).isActive = true
+        bt1.widthAnchor.constraint(equalTo: v1.widthAnchor, multiplier: 0.5, constant: 0).isActive = true
         
-        NSLayoutConstraint(item: bt1, attribute: .width, relatedBy: .equal, toItem: v1, attribute: .width, multiplier: 0.5, constant: 0).isActive = true
+      //  NSLayoutConstraint(item: bt1, attribute: .top, relatedBy: .equal, toItem: bt2, attribute: .bottom, multiplier: 1.0, constant: 24).isActive = true
+        
+     //   NSLayoutConstraint(item: bt1, attribute: .centerX, relatedBy: .equal, toItem: v1, attribute: .centerX, multiplier: 1.0, constant: 0).isActive = true
+        
+     //   NSLayoutConstraint(item: bt1, attribute: .width, relatedBy: .equal, toItem: v1, attribute: .width, multiplier: 0.5, constant: 0).isActive = true
         
         return bt1
     }
@@ -73,16 +83,21 @@ class PriorityTestViewController: UIViewController {
         v1.addSubview(bt1)
         bt1.translatesAutoresizingMaskIntoConstraints = false
         
-        NSLayoutConstraint(item: bt1, attribute: .top, relatedBy: .equal, toItem: v1, attribute: .top, multiplier: 1.0, constant: 24).isActive = true
         
-        NSLayoutConstraint(item: bt1, attribute: .centerX, relatedBy: .equal, toItem: v1, attribute: .centerX, multiplier: 1.0, constant: 0).isActive = true
+        bt1.topAnchor.constraint(equalTo: v1.topAnchor, constant: 24).isActive = true
+        bt1.centerXAnchor.constraint(equalTo: v1.centerXAnchor, constant: 0).isActive = true
+        bt1.widthAnchor.constraint(equalTo: v1.widthAnchor, multiplier: 0.5, constant: 0).isActive = true
         
-        NSLayoutConstraint(item: bt1, attribute: .width, relatedBy: .equal, toItem: v1, attribute: .width, multiplier: 0.5, constant: 0).isActive = true
+        //NSLayoutConstraint(item: bt1, attribute: .top, relatedBy: .equal, toItem: v1, attribute: .top, multiplier: 1.0, constant: 24).isActive = true
+        
+     //   NSLayoutConstraint(item: bt1, attribute: .centerX, relatedBy: .equal, toItem: v1, attribute: .centerX, multiplier: 1.0, constant: 0).isActive = true
+        
+    //    NSLayoutConstraint(item: bt1, attribute: .width, relatedBy: .equal, toItem: v1, attribute: .width, multiplier: 0.5, constant: 0).isActive = true
         
         return bt1
     }
     
-    func addBtn1<T>(lbl: T) -> UIButton {
+    func addBtn1(lbl: UILabel) -> UIButton {
         let bt1 = UIButton()
         bt1.frame = CGRect(x: 0, y: 0, width: self.view.frame.width - 36, height: 40)
         bt1.setTitle("Button 1", for: .normal)
@@ -93,11 +108,16 @@ class PriorityTestViewController: UIViewController {
         self.view.addSubview(bt1)
         bt1.translatesAutoresizingMaskIntoConstraints = false
         
-        NSLayoutConstraint(item: bt1, attribute: .top, relatedBy: .equal, toItem: lbl, attribute: .bottom, multiplier: 1.0, constant: 24).isActive = true
         
-        NSLayoutConstraint(item: bt1, attribute: .leading, relatedBy: .equal, toItem: self.view.safeAreaLayoutGuide, attribute: .leading, multiplier: 1.0, constant: 18).isActive = true
+        bt1.topAnchor.constraint(equalTo: lbl.bottomAnchor, constant: 24).isActive = true
+        bt1.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 24).isActive = true
+        bt1.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: -24).isActive = true
         
-        NSLayoutConstraint(item: bt1, attribute: .trailing, relatedBy: .equal, toItem: self.view.safeAreaLayoutGuide, attribute: .trailing, multiplier: 1.0, constant: -18).isActive = true
+      //  NSLayoutConstraint(item: bt1, attribute: .top, relatedBy: .equal, toItem: lbl, attribute: .bottom, multiplier: 1.0, constant: 24).isActive = true
+        
+     //   NSLayoutConstraint(item: bt1, attribute: .leading, relatedBy: .equal, toItem: self.view.safeAreaLayoutGuide, attribute: .leading, multiplier: 1.0, constant: 18).isActive = true
+        
+       // NSLayoutConstraint(item: bt1, attribute: .trailing, relatedBy: .equal, toItem: self.view.safeAreaLayoutGuide, attribute: .trailing, multiplier: 1.0, constant: -18).isActive = true
         
         return bt1
     }
@@ -115,13 +135,15 @@ class PriorityTestViewController: UIViewController {
         
         self.view.addSubview(titleLabel)
         
+        titleLabel.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 24).isActive = true
+        titleLabel.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 24).isActive = true
+        titleLabel.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: 24).isActive = true
         
+        //NSLayoutConstraint(item: titleLabel, attribute: .top, relatedBy: .equal, toItem: self.view.safeAreaLayoutGuide, attribute: .top, multiplier: 1.0, constant: 24).isActive = true
         
-        NSLayoutConstraint(item: titleLabel, attribute: .top, relatedBy: .equal, toItem: self.view.safeAreaLayoutGuide, attribute: .top, multiplier: 1.0, constant: 24).isActive = true
+     //   NSLayoutConstraint(item: titleLabel, attribute: .leading, relatedBy: .equal, toItem: self.view.safeAreaLayoutGuide, attribute: .leading, multiplier: 1.0, constant: 18).isActive = true
         
-        NSLayoutConstraint(item: titleLabel, attribute: .leading, relatedBy: .equal, toItem: self.view.safeAreaLayoutGuide, attribute: .leading, multiplier: 1.0, constant: 18).isActive = true
-        
-        NSLayoutConstraint(item: titleLabel, attribute: .trailing, relatedBy: .equal, toItem: self.view.safeAreaLayoutGuide, attribute: .trailing, multiplier: 1.0, constant: -18).isActive = true
+       // NSLayoutConstraint(item: titleLabel, attribute: .trailing, relatedBy: .equal, toItem: self.view.safeAreaLayoutGuide, attribute: .trailing, multiplier: 1.0, constant: -18).isActive = true
         
         return titleLabel
     }
