@@ -9,11 +9,10 @@ import UIKit
 
 class PriorityTestViewController: UIViewController {
 
-   
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        /*
         self.view.backgroundColor = .yellow
         
        let lbl = addLabel()
@@ -44,6 +43,7 @@ class PriorityTestViewController: UIViewController {
         let bt2 = addBtn2(v1 : v1)
         
         let bt3 = addBtn3(v1 : v1, bt2 : bt2)
+         */
     }
     
     
