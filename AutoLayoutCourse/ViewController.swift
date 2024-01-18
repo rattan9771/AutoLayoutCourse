@@ -10,30 +10,38 @@ import UIKit
 class PriorityTestViewController: UIViewController {
 
    
-    @IBOutlet weak var redLbl1: UILabel!
+    @IBOutlet weak var leadingYellow: NSLayoutConstraint!
     
-    @IBOutlet weak var yellowLbl1: UILabel!
-    
-    @IBOutlet weak var redLbl2: UILabel!
-    
-    @IBOutlet weak var yellowLbl2: UILabel!
+    @IBOutlet weak var bottom: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        yellowLbl1.text = "250 want to grow"
-        redLbl1.text = "251 we want to grow"
-        
-        //hug - don't want to grow
-        //resistance-  don't want to compress
-       
-        
-        redLbl2.text = "251 we want to grow"
-//
-        yellowLbl2.text = "250 want to grow"
-//
+      
     }
 
-
+    @IBAction func tapMe(_ sender: Any) {
+        
+        UIView.animate(withDuration: 3.0) {
+            
+            if self.leadingYellow.constant == 0 {
+                self.leadingYellow.constant = -(self.view.frame.width)
+            }else {
+                self.leadingYellow.constant = 0
+            }
+            
+            if self.bottom.constant == -500 {
+                self.bottom.constant = 0
+            }else {
+                self.bottom.constant = -500
+            }
+            
+            self.view.layoutIfNeeded()
+            
+        }
+        
+        
+    }
+    
 }
 
