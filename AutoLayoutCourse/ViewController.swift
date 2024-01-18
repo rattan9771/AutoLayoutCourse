@@ -9,43 +9,31 @@ import UIKit
 
 class PriorityTestViewController: UIViewController {
 
-    @IBOutlet weak var playbackbtn: UIButton!
+   
+    @IBOutlet weak var redLbl1: UILabel!
     
-    @IBOutlet weak var ibookBtn: UIButton!
+    @IBOutlet weak var yellowLbl1: UILabel!
     
-    @IBOutlet weak var kindleBtn: UIButton!
+    @IBOutlet weak var redLbl2: UILabel!
     
+    @IBOutlet weak var yellowLbl2: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-    }
-
-    @IBAction func tapBtn(sender : UIButton) {
         
-        UIView.animate(withDuration: 0.5) {
-            
-            switch sender.tag {
-                
-            case 0:
-                self.playbackbtn.removeFromSuperview()
-                
-            case 1:
-                self.ibookBtn.removeFromSuperview()
-                
-            case 2:
-                self.kindleBtn.removeFromSuperview()
-                
-            default:
-                print("nothing")
-            }
-            
-            self.view.layoutIfNeeded()
-        }
+        yellowLbl1.text = "250 want to grow"
+        redLbl1.text = "251 we want to grow"
+        
+        //hug - don't want to grow
+        //resistance-  don't want to compress
        
         
-        
+        redLbl2.text = "251 we want to grow"
+//
+        yellowLbl2.text = "250 want to grow"
+//
     }
+
 
 }
 
